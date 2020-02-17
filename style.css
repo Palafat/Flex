@@ -1,0 +1,106 @@
+body {
+  margin: 0;
+  height: 100vh;
+}
+
+.main p {
+  margin: 0;
+}
+
+.header,
+.footer,
+.main,
+.menu-primary,
+.menu-secondary {
+  font-size: 1.5rem;
+  overflow: hidden;
+}
+
+.header {
+  background: #2d303a;
+  color: #ffffff;
+  height: 50px;
+}
+
+.footer {
+  background: #f2f2f2;
+  color: #666d89;
+  height: 50px;
+}
+
+.container {
+  height: calc(100% - 100px);
+  background: #999;
+}
+
+.main {
+  font-size: 2rem;
+  background: #eee;
+}
+
+.menu-primary {
+  background: #ccc;
+}
+
+.menu-secondary {
+  background: #ddd;
+}
+
+/* flex */
+
+.container {
+  display: flex;
+  flex-wrap: wrap; /*позволяет переносить на след строку то, что выходит за пределы*/
+}
+
+.main {
+  font-size: 2rem;
+  background: #eee;
+  flex-grow: 1; /* определяет как много свободного пространства должно быть назначено текущему элементу*/
+  order: 2;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.menu-primary {
+  width: 25%;
+  order: 1;
+}
+
+.menu-secondary {
+  width: 25%;
+  order: 3;
+}
+
+@media only screen and (max-width: 800px) {
+  .menu-primary {
+    flex-basis: 25%;
+    height: 75%;
+  }
+
+  .main {
+    height: 75%;
+  }
+
+  .menu-secondary {
+    flex-basis: 100%;
+    height: 25%;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .menu-primary {
+    flex-basis: 100%;
+    height: 25%;
+  }
+
+  .main {
+    height: 50%;
+  }
+
+  .menu-secondary {
+    flex-basis: 100%;
+    height: 25%;
+  }
+}
